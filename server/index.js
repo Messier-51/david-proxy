@@ -2,7 +2,7 @@ const express = require ('express');
 
 const app = express();
 const path = require('path');
-const port = 1234;
+const port = 3006;
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 

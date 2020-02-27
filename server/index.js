@@ -4,6 +4,10 @@ const app = express();
 const path = require('path');
 const port = 1234;
 
-app.use(express.static(path.join(__dirname, '../client/dist/index.html')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.listen(port, () => console.log(`serving on port ${port}`));
+app.get('/songs/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
+});
+
+app.listen(port, () => console.log(`serving on port ${port}!`));
